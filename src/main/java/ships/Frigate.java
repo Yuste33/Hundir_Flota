@@ -10,6 +10,15 @@ public class Frigate extends Ship {
     // Atributo específico de Frigate
     private int cannonCount = 2; // Fragatas tienen 2 cañones por defecto
 
+    int number;
+    String name;
+    int level;
+    public Frigate(int number, String name, int level) {
+        this.name=name;
+        this.level=level;
+        this.number=number;
+
+    }
     // Constructor vacío requerido por JPA
     public Frigate() {
         super();

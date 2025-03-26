@@ -8,6 +8,7 @@ import repositories.ShipRepository;
 @Component
 public class CanoeBuilder implements ShipBuilder {
 
+
     @Autowired
     private ShipRepository shipRepository;
 

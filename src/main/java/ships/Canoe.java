@@ -11,11 +11,21 @@ public class Canoe extends Ship {
     public Canoe() {
         super();
     }
+    int number;
+    String name;
+    int level;
+    public Canoe(int number, String name, int level) {
+        this.name=name;
+        this.level=level;
+        this.number=number;
+
+    }
 
     // Constructor con parámetros
     public Canoe(String name) {
         super(name, 1); // Tamaño fijo de 1 para Canoe
     }
+
 
     @Override
     public String getType() {
