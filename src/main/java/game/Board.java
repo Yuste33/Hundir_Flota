@@ -1,41 +1,20 @@
 package game;
-import ships.Ship;
 
+import jakarta.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity
 public class Board {
-    private char[][] grid;
-    private static final int SIZE = 10;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    public Board() {
-        grid = new char[SIZE][SIZE];
-        for (int i = 0; i < SIZE; i++) {
-            for (int j = 0; j < SIZE; j++) {
-                grid[i][j] = '-';
-            }
-        }
-    }
+    @OneToMany(mappedBy = "board", cascade = CascadeType.ALL)
+    private List<Cell> cells = new ArrayList<>();
 
-    public void placeShip(int x, int y, Ship ship) {
-        if (x >= 0 && x < SIZE && y >= 0 && y < SIZE) {
-            grid[x][y] = 'S';
-        }
-    }
+    @OneToOne(mappedBy = "board")
+    private players.Player player;
 
-    public boolean attack(int x, int y) {
-        if (x >= 0 && x < SIZE && y >= 0 && y < SIZE) {
-            if (grid[x][y] == 'S') {
-                grid[x][y] = 'X';
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public void displayBoard() {
-        for (int i = 0; i < SIZE; i++) {
-            for (int j = 0; j < SIZE; j++) {
-                System.out.print(grid[i][j] + " ");
-            }
-            System.out.println();
-        }
-    }
+    // Getters/Setters
 }

@@ -3,5 +3,6 @@ package builders;
 import ships.Ship;
 
 public interface ShipBuilder {
-    Ship buildShip();
+    void buildName(String name);
+    Ship getShip();
 }

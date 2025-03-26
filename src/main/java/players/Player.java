@@ -1,27 +1,23 @@
 package players;
-import ships.Ship;
 
+import jakarta.persistence.*;
+import game.Board;
+
+@Entity
 public class Player {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String name;
-    private Ship[] fleet;
 
-    public Player(String name) {
-        this.name = name;
-        this.fleet = new Ship[3];
-    }
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "fleet_id")
+    private Fleet fleet;
 
-    public void setFleet(Ship[] ships) {
-        this.fleet = ships;
-    }
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "board_id")
+    private Board board;
 
-    public boolean hasShipsRemaining() {
-        for (Ship ship : fleet) {
-            if (!ship.isSunk()) return true;
-        }
-        return false;
-    }
-
-    public String getName() {
-        return name;
-    }
+    // Getters/Setters
 }

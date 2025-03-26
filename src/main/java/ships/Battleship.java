@@ -1,20 +1,19 @@
 package ships;
 
-public class Battleship extends Ship {
-    private boolean[] containers;
+import jakarta.persistence.Entity;
+import jakarta.persistence.DiscriminatorValue;
 
-    public Battleship() {
-        super(5);
-        this.containers = new boolean[5];
+@Entity
+@DiscriminatorValue("BATTLESHIP")
+public class Battleship extends Ship {
+    public Battleship() {}
+
+    public Battleship(String name) {
+        super(name, 5);
     }
 
     @Override
-    public boolean hit(int position) {
-        if (position >= 0 && position < size) {
-            positions[position] = true;
-            containers[position] = true;
-            return true;
-        }
-        return false;
+    public String getType() {
+        return "BATTLESHIP";
     }
 }
