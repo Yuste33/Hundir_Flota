@@ -1,14 +1,14 @@
 # Juego de Batalla Naval
 
-Un clásico juego de batalla naval implementado en Java, con funcionalidad para dos jugadores.
+## Enlace al repo: https://github.com/Yuste33/Hundir_Flota
 
 ## Características principales
 
-- 🚢 **Sistema de flotas** con diferentes tipos de barcos
-- 🎯 **Tableros interactivos** para cada jugador
-- ⚔️ **Mecánica de turnos** alternados
-- 💥 **Detección de impactos** y hundimientos
-- 📊 **Seguimiento de estado** del juego
+-  **Sistema de flotas** con diferentes tipos de barcos
+-  **Tableros interactivos** para cada jugador
+-  **Mecánica de turnos** alternados
+-  **Detección de impactos** y hundimientos
+-  **Seguimiento de estado** del juego
 
 ## Tipos de barcos disponibles
 
@@ -36,4 +36,3 @@ Un clásico juego de batalla naval implementado en Java, con funcionalidad para 
 - Java JDK 11 o superior
 - Maven (para gestión de dependencias)
 
-## Estructura del proyecto
